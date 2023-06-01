@@ -20,3 +20,19 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	tree->right = NULL;
 	return (tree);
 }
+
+/*
+ * is_node - the function
+ * @node: pointer to a node to be checked
+ * Description: a function to check if its a node
+ * return: integer 1 or 0
+ */
+int is_node(binary_tree_t *node)
+{
+        if (node == NULL)
+                return (0);
+        if (node->left || node->right)
+                return (1);
+        else
+                return (0);
+}
