@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /*
  * treverse_count_node - the function
  * @tree: pointer to a tree
