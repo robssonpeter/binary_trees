@@ -1,39 +1,20 @@
 #include "binary_trees.h"
-/*
- * treverse_count_node - the function
- * @tree: pointer to a tree
- * @nodes: pointer to number of nodes
- * return: size_t variable
- * Description: the function to count nodes
- */
-size_t traverse_count_node(binary_tree_t *tree, size_t *nodes)
-{
-	if (is_node(tree))
-	{
-		(*nodes)++;
-		traverse_count_node(tree->left, nodes);
-		traverse_count_node(tree->right, nodes);
-	}
-	return (*nodes);
-}
 
-
-/*
- * binary_tree_nodes - the function
- * @tree: the tree to be exmined
- * Description: the function to check how many nodes the tree has
- * return: size_t variable
+/**
+ * binary_tree_nodes - Counts the nodes with at least 1 child in a binary tree.
+ * @tree: A pointer to the root node of the tree to count the number of nodes.
+ *
+ * Return: If tree is NULL, the function must return 0, else return node count.
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t nodes;
+	size_t nodes = 0;
 
-	nodes = 0;
-	if (tree->right || tree->left)
+	if (tree)
 	{
-		nodes = 1;
-		traverse_count_node(tree->left, &nodes);
-		traverse_count_node(tree->right, &nodes);
+		nodes += (tree->left || tree->right) ? 1 : 0;
+		nodes += binary_tree_nodes(tree->left);
+		nodes += binary_tree_nodes(tree->right);
 	}
 	return (nodes);
 }
