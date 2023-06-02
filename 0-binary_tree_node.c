@@ -29,10 +29,10 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
  */
 int is_node(binary_tree_t *node)
 {
-        if (node == NULL)
-                return (0);
-        if (node->left || node->right)
-                return (1);
-        else
-                return (0);
+	if (node == NULL)
+		return (0);
+	if (node->left || node->right)
+		return (1);
+	else
+		return (0);
 }
