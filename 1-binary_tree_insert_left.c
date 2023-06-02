@@ -2,7 +2,7 @@
 
 /**
  * binary_treee_insert_left  - the function
- * Description: a function to set the left item of a node
+ * description: a function to set the left item of a node
  * @parent: Pointer to the parent node
  * @value: value to be set
  */
